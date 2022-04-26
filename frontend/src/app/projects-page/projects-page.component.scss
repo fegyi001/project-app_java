@@ -1,0 +1,19 @@
+h1  {
+  padding: 20px;
+}
+
+.footer {
+  text-align: left;
+
+  & span {
+    cursor: pointer;
+  }
+}
+
+.pi.pi-trash {
+  cursor: pointer;
+}
+
+.editable {
+  cursor: pointer;
+}

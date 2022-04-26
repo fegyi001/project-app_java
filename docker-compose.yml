@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  database:
+    image: project-app-database
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+      args:
+        POSTGRES_VERSION: ${POSTGRES_VERSION}
+        TIMEZONE: ${TIMEZONE}
+    volumes:
+      - project-app-database:/var/lib/postgresql/data
+      - ./database/restore:/opt/restore
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-abc123}
+      - DB_NAME=${DB_NAME:-postgres}
+  frontend:
+    image: project-app-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+        NPM_VERSION: ${NPM_VERSION}
+        NGINX_VERSION: ${NGINX_VERSION}
+        TIMEZONE: ${TIMEZONE}
+    restart: always
+    ports:
+      - '80:80'
+#  api:
+#    image: project-app-api
+#    build:
+#      context: ./api
+#      dockerfile: Dockerfile
+#      args:
+#        TIMEZONE: ${TIMEZONE}
+#    ports:
+#      - '8080:8080'
+#    depends_on:
+#      - database
+
+volumes:
+  project-app-database:
