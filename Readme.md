@@ -12,7 +12,9 @@ Az API szerver segítségével **projektek**-et kell tudni létrehozni, listázn
 A mellékelt `api/openapi.yaml` fájl tartalmazza a lehetséges végpontokat a projektek kezeléséhez. Az adatbázis induláskor egyetlen projektet tartalmaz.
 
 Az oldal elvárt működését a következő screen capture mutatja be: [link megtekintése](https://e1.pcloud.link/publink/show?code=XZitDzZ3B772xudjuFuAtFT8URorLxoCrIy)
-
+<br>
+Nagyra értékeljük, ha **clean code** alapelveket alkalmazol a megoldás során, illetve különösen örülünk **unit teszteknek**.
+<br>
 A megoldást egy **GitHub repository**-ba várjuk.
 
 Ha bármilyen kérdésed van, vagy valami nem akar úgy működni ahogy kéne, kérlek jelezd!
